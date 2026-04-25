@@ -1,0 +1,14 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/fwc",
+      "destination": "/fwc/index.html"
+    },
+    {
+      "source": "/login",
+      "destination": "/login/index.html"
+    }
+  ]
+}
