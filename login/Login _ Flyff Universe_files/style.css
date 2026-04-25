@@ -1,0 +1,192 @@
+body {
+    font-family: 'Noto Sans', sans-serif;
+    padding-top: 4rem;
+}
+
+hr {
+    border-top: 1px solid #DEDEDE;
+    opacity: 1;
+}
+
+form a {
+    text-decoration: none;
+}
+
+#navbar .nav-link.active:after {
+    content: '';
+    display: block;
+    background: linear-gradient(to right, #179BFF 0%, #A81BE5 100%);
+    height: 4px;
+    border-radius: 4px;
+    margin-top: 4px;
+}
+
+#navbar.show .nav-link.active:after, #navbar.collapsing .nav-link.active:after {
+    content: '';
+    display: none;
+}
+
+#carousel-home {
+    height: 70px;
+}
+
+#carousel-home .arrow {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+#carousel-home .active {
+    background: linear-gradient(to right, #0086EB 0%, #8700C1 100%);
+}
+
+#socials-fixed {
+    right: 60px; 
+    top: 200px; 
+    z-index: 2000; 
+    width: 100px;
+}
+
+.hero-text {
+    opacity: 0;
+    transition: opacity 225ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+a.hero-text:hover {
+    text-decoration: underline!important;
+}
+
+.fade-custom {
+    opacity: 1;
+    transition: opacity 300ms cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+.img-fit-cover {
+    object-fit: cover;
+}
+
+.vr {
+    opacity: 1;
+    background-color: #DEDEDE;
+}
+
+.jumbotron {
+    display: flex;
+    align-items: flex-end;
+    height: 170px;
+    width: 100%;
+    background-image: url("https://cdn-universe.flyff.com/site/assets/images/banner.png");
+}
+
+.jumbotron-image {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.btn-play {
+    background-image: url("https://cdn-universe.flyff.com/site/assets/images/btn_play_1.png"); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 19px 26px;
+    color: #fff;
+    font-weight: bold;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: all .3s;
+}
+
+.btn-play:hover {
+    background-image: url("https://cdn-universe.flyff.com/site/assets/images/btn_play_hover_1.png");
+    color: #fff;
+}
+
+.play-mobile {
+    background-image: url("https://cdn-universe.flyff.com/site/assets/images/btn_play_mobile.png"); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 120px;
+    height: 90px;
+    z-index: 1000;
+    bottom: 75px; 
+    right: 15px;
+}
+
+.list-group-item.active, .btn-gradient {
+    color: #fff;
+    background: linear-gradient(to right, #0086EB 0%, #8700C1 100%);
+    border: none;
+}
+
+.btn-gradient:hover {
+    color: #fff;
+    background: linear-gradient(to right, #179BFF 0%, #A81BE5 100%);
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+  
+.separator::before,
+.separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #DEDEDE;
+}
+
+.separator:not(:empty)::before {
+    margin-right: .25em;
+}
+
+.separator:not(:empty)::after {
+    margin-left: .25em;
+}
+
+#news-tabs .nav-link {
+    color: #8D8D8D;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+#news-tabs .nav-link.active {
+    color: #8145CF;
+    border-bottom: 4px solid #8145CF;
+}
+
+#shop-home {
+    min-height: 560px;
+    background-image: url("https://cdn-universe.flyff.com/site/assets/images/shopmain.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.svg {
+    height: 1em;
+    width: 1em;
+    vertical-align: -0.125em;
+}
+
+.navbar .nav-link .svg {
+    height: 1.5em;
+    width: 1.5em;
+    vertical-align: -0.395em;
+    border-radius: 3px;
+}
+
+.bg-purple {
+    background-color: #8145CF;
+}
+
+.bg-gray-300 {
+    background-color: #E8E8E8;
+}
+
+.bg-gray-100 {
+    background-color: #F6F6F6;
+}
