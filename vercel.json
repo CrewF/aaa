@@ -7,6 +7,10 @@
       "destination": "/fwc/index.html"
     },
     {
+      "source": "/anniversary",
+      "destination": "/anniversary/index.html"
+    },
+    {
       "source": "/login",
       "destination": "/login/index.html"
     }
